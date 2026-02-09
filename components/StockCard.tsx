@@ -15,6 +15,24 @@ interface StockCardProps {
   glowColor: string
 }
 
+// Map gradient names to actual CSS gradients
+const gradientMap: Record<string, string> = {
+  'gradient-joy-purple': 'linear-gradient(135deg, #9D4EDD 0%, #3A86FF 100%)',
+  'gradient-joy-blue': 'linear-gradient(135deg, #3A86FF 0%, #00D9FF 100%)',
+  'gradient-joy-cyan': 'linear-gradient(135deg, #00D9FF 0%, #06FFA5 100%)',
+  'gradient-joy-green': 'linear-gradient(135deg, #06FFA5 0%, #FFD60A 100%)',
+  'gradient-joy-orange': 'linear-gradient(135deg, #FF6B35 0%, #FFD60A 100%)',
+}
+
+// Map shadow names to box-shadow values
+const shadowMap: Record<string, string> = {
+  'shadow-glow-purple': '0 0 20px rgba(157, 78, 221, 0.3)',
+  'shadow-glow-blue': '0 0 20px rgba(58, 134, 255, 0.3)',
+  'shadow-glow-cyan': '0 0 20px rgba(0, 217, 255, 0.3)',
+  'shadow-glow-green': '0 0 20px rgba(6, 255, 165, 0.3)',
+  'shadow-glow-orange': '0 0 20px rgba(255, 107, 53, 0.3)',
+}
+
 export default function StockCard({
   symbol,
   name,
@@ -29,9 +47,15 @@ export default function StockCard({
 
   return (
     <Link href={`/stock/${symbol.toLowerCase()}`}>
-      <div className={`group relative overflow-hidden rounded-2xl border-2 border-transparent transition-all duration-300 cursor-pointer hover:scale-105 ${glowColor}`}>
+      <div 
+        className="group relative overflow-hidden rounded-2xl border-2 border-transparent transition-all duration-300 cursor-pointer hover:scale-105"
+        style={{ boxShadow: shadowMap[glowColor] || 'none' }}
+      >
         {/* Animated background gradient */}
-        <div className={`absolute inset-0 bg-${colorGradient} opacity-90`} />
+        <div 
+          className="absolute inset-0 opacity-90"
+          style={{ backgroundImage: gradientMap[colorGradient] || 'none' }}
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/40" />
 
         {/* Content */}
