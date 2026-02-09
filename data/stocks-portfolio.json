@@ -7,6 +7,9 @@
       "lastReviewDate": "2026-02-08",
       "reason": "Connected storage and high-speed data center semiconductors. AI infrastructure play with less crowding than NVDA. Customers consolidating suppliers to Marvell for storage + networking. Strong execution, 30%+ revenue growth.",
       "strength": 9.1,
+      "last_price": 92.45,
+      "last_price_change": 2.38,
+      "last_updated": "2026-02-09T03:47:00Z",
       "fundamentals": {
         "pe_ratio": 28,
         "growth_rate": 32,
@@ -23,6 +26,9 @@
       "lastReviewDate": "2026-02-08",
       "reason": "Cloud monitoring SaaS with recurring revenue model. Enterprise customers expanding Datadog footprint across infrastructure. AI integration into monitoring is creating new revenue streams. 40%+ revenue growth, path to 25%+ FCF margins.",
       "strength": 8.8,
+      "last_price": 198.75,
+      "last_price_change": 2.16,
+      "last_updated": "2026-02-09T03:47:00Z",
       "fundamentals": {
         "pe_ratio": 85,
         "growth_rate": 38,
@@ -39,6 +45,9 @@
       "lastReviewDate": "2026-02-08",
       "reason": "Endpoint security leader consolidating enterprise security stack. Zero-trust architecture is now mandatory after breach epidemics. Net retention >120%. Moving from point solution to comprehensive platform. High gross margins 80%+.",
       "strength": 8.6,
+      "last_price": 385.60,
+      "last_price_change": 1.71,
+      "last_updated": "2026-02-09T03:47:00Z",
       "fundamentals": {
         "pe_ratio": 48,
         "growth_rate": 25,
@@ -55,6 +64,9 @@
       "lastReviewDate": "2026-02-08",
       "reason": "Genetic testing pioneer with liquid biopsy technology for cancer detection. TAM expanding as screening becomes standard care. Transitioning to subscription model for recurring revenue. Real healthcare technology with defensive moat. High risk/high reward.",
       "strength": 8.2,
+      "last_price": 89.20,
+      "last_price_change": 3.59,
+      "last_updated": "2026-02-09T03:47:00Z",
       "fundamentals": {
         "pe_ratio": null,
         "growth_rate": 35,
@@ -71,6 +83,9 @@
       "lastReviewDate": "2026-02-08",
       "reason": "Biotech with proven cash flow generation and strong R&D pipeline. Portfolio includes HIV, hepatitis C treatments with recurring revenue. More contrarian than pure SaaS plays. Dividend yield + growth. Real drugs for real diseases.",
       "strength": 7.9,
+      "last_price": 87.55,
+      "last_price_change": 1.39,
+      "last_updated": "2026-02-09T03:47:00Z",
       "fundamentals": {
         "pe_ratio": 12,
         "growth_rate": 8,
@@ -85,19 +100,37 @@
     {
       "date": "2026-02-08",
       "action": "Initial portfolio selection",
-      "stocks_selected": ["NVDA", "MSFT", "BRK.B", "AAPL", "JPM"],
+      "stocks_selected": [
+        "NVDA",
+        "MSFT",
+        "BRK.B",
+        "AAPL",
+        "JPM"
+      ],
       "reasoning": "Initial balanced portfolio with AI exposure and safety"
     },
     {
       "date": "2026-02-09",
       "action": "Strategic portfolio revision - AI infrastructure focus",
-      "stocks_selected": ["NVDA", "MSFT", "SMCI", "PSTG", "COIN"],
+      "stocks_selected": [
+        "NVDA",
+        "MSFT",
+        "SMCI",
+        "PSTG",
+        "COIN"
+      ],
       "reasoning": "Thesis: AI infrastructure buildout (SMCI servers) + storage for AI data (PSTG) + AI cloud leaders (NVDA, MSFT) + crypto as alternative inflation hedge and sector momentum play (COIN). All 5 have >8.2 strength with clear catalysts."
     },
     {
       "date": "2026-02-08",
       "action": "Portfolio redesign - smaller cap, more interesting companies",
-      "stocks_selected": ["MRVL", "DDOG", "CRWD", "NTRA", "GILD"],
+      "stocks_selected": [
+        "MRVL",
+        "DDOG",
+        "CRWD",
+        "NTRA",
+        "GILD"
+      ],
       "reasoning": "Thesis: Move away from mega-cap safety plays. MRVL + DDOG benefit from AI/cloud growth but less crowded. CRWD is platform consolidation winner. NTRA is small-cap genetic testing revolutionizing healthcare. GILD is contrarian biotech with cash flow. Mix of growth (NTRA, DDOG, MRVL) and value (GILD) with real catalysts."
     }
   ]

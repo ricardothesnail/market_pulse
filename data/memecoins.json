@@ -1,65 +1,60 @@
 {
   "memecoins": [
     {
-      "id": "pepe",
-      "symbol": "PEPE",
-      "name": "Pepe",
-      "current_price": 0.000003752,
-      "market_cap": "$1.55B",
-      "price_change_24h": -2.96,
-      "rsi": 45.2,
-      "sellSignal": "HOLD",
-      "image": "https://assets.coingecko.com/coins/images/29850/large/pepe-token.jpeg",
-      "last_updated": "2026-02-08T20:56:00Z"
+      "id": "bitcoin",
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "current_price": 70961.48998809162,
+      "market_cap": "$1,418,749,098,216",
+      "market_cap_rank": 1,
+      "price_change_24h": 2.5345127017621842,
+      "image": "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png?1696501400",
+      "last_updated": "2026-02-09T03:47:23.410Z"
     },
     {
-      "id": "shiba-inu",
-      "symbol": "SHIB",
-      "name": "Shiba Inu",
-      "current_price": 0.000006086,
-      "market_cap": "$3.59B",
-      "price_change_24h": -3.09,
-      "rsi": 38.5,
-      "sellSignal": "BUY",
-      "image": "https://assets.coingecko.com/coins/images/11939/large/shib.png",
-      "last_updated": "2026-02-08T20:56:00Z"
+      "id": "pudgy-penguins",
+      "symbol": "PENGU",
+      "name": "Pudgy Penguins",
+      "current_price": 0.006548614965711724,
+      "market_cap": "$411,494,869",
+      "market_cap_rank": 110,
+      "price_change_24h": 0.4723848846112581,
+      "image": "https://coin-images.coingecko.com/coins/images/52622/large/PUDGY_PENGUINS_PENGU_PFP.png?1733809110",
+      "last_updated": "2026-02-09T03:47:23.410Z"
     },
     {
-      "id": "dogecoin",
-      "symbol": "DOGE",
-      "name": "Dogecoin",
-      "current_price": 0.09591,
-      "market_cap": "$16.18B",
-      "price_change_24h": -2.26,
-      "rsi": 52.1,
-      "sellSignal": "HOLD",
-      "image": "https://assets.coingecko.com/coins/images/5/large/dogecoin.png",
-      "last_updated": "2026-02-08T20:56:00Z"
+      "id": "bankercoin-2",
+      "symbol": "BNKR",
+      "name": "BankrCoin",
+      "current_price": 0.000908958670580157,
+      "market_cap": "$90,276,728",
+      "market_cap_rank": 297,
+      "price_change_24h": 31.573161782372733,
+      "image": "https://coin-images.coingecko.com/coins/images/52626/large/bankr-static.png?1736405365",
+      "last_updated": "2026-02-09T03:47:23.410Z"
     },
     {
-      "id": "floki",
-      "symbol": "FLOKI",
-      "name": "Floki Inu",
-      "current_price": 0.000234,
-      "market_cap": "$245M",
-      "price_change_24h": 5.32,
-      "rsi": 68.7,
-      "sellSignal": "SELL",
-      "image": "https://assets.coingecko.com/coins/images/16621/large/1_dexScreenshot_20211221-03-21-48.png",
-      "last_updated": "2026-02-08T20:56:00Z"
+      "id": "kaspa",
+      "symbol": "KAS",
+      "name": "Kaspa",
+      "current_price": 0.033641295656307274,
+      "market_cap": "$900,667,855",
+      "market_cap_rank": 72,
+      "price_change_24h": 7.143847280051078,
+      "image": "https://coin-images.coingecko.com/coins/images/25751/large/kaspa-icon-exchanges.png?1696524837",
+      "last_updated": "2026-02-09T03:47:23.410Z"
     },
     {
-      "id": "dogwifhat",
-      "symbol": "WIF",
-      "name": "dogwifhat",
-      "current_price": 0.287,
-      "market_cap": "$867M",
-      "price_change_24h": 12.45,
-      "rsi": 72.3,
-      "sellSignal": "STRONG_SELL",
-      "image": "https://assets.coingecko.com/coins/images/33566/large/DWF.png",
-      "last_updated": "2026-02-08T20:56:00Z"
+      "id": "hyperliquid",
+      "symbol": "HYPE",
+      "name": "Hyperliquid",
+      "current_price": 33.225371778519076,
+      "market_cap": "$7,877,486,061",
+      "market_cap_rank": 15,
+      "price_change_24h": 6.8283085485872475,
+      "image": "https://coin-images.coingecko.com/coins/images/50882/large/hyperliquid.jpg?1729431300",
+      "last_updated": "2026-02-09T03:47:23.410Z"
     }
   ],
-  "last_updated": "2026-02-08T20:56:00Z"
+  "last_updated": "2026-02-09T03:47:28.909Z"
 }
