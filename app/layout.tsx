@@ -17,7 +17,7 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className="bg-bg-light">
+      <body className="bg-bg-dark">
         {children}
       </body>
     </html>
