@@ -145,10 +145,10 @@ export default function Home() {
         </div>
       </div>
 
-      <main className="max-w-7xl mx-auto px-6 pb-20">
+      <main className="max-w-6xl mx-auto px-6 pb-20">
         {/* Stock Gallery Section */}
-        <section className="mb-24">
-          <h2 className="text-4xl font-black text-joy-cyan mb-12">My Top 5 Stock Picks</h2>
+        <section className="mb-32">
+          <h2 className="text-4xl font-black text-joy-cyan mb-12 text-center">My Top 5 Stock Picks</h2>
 
           {loading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -166,9 +166,9 @@ export default function Home() {
         </section>
 
         {/* Memecoins Section */}
-        <section className="mb-24">
-          <h2 className="text-4xl font-black text-joy-magenta mb-4">🚀 Trending Memecoins</h2>
-          <p className="text-text-secondary mb-12">High volatility for high stakes. Check RSI and signals, but trade with caution.</p>
+        <section className="mb-32">
+          <h2 className="text-4xl font-black text-joy-magenta mb-4 text-center">🚀 Trending Memecoins</h2>
+          <p className="text-text-secondary mb-12 text-center">High volatility for high stakes. Check RSI and signals, but trade with caution.</p>
 
           {loading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -200,9 +200,9 @@ export default function Home() {
         </section>
 
         {/* News Section */}
-        <section className="mb-24">
-          <h2 className="text-4xl font-black text-joy-green mb-4">📰 Market News & Insights</h2>
-          <p className="text-text-secondary mb-12">Latest market developments with sentiment analysis.</p>
+        <section className="mb-32">
+          <h2 className="text-4xl font-black text-joy-green mb-4 text-center">📰 Market News & Insights</h2>
+          <p className="text-text-secondary mb-12 text-center">Latest market developments with sentiment analysis.</p>
 
           {loading ? (
             <div className="space-y-4">
@@ -224,11 +224,11 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="py-12 border-t border-white/10 text-center">
-          <div className="space-y-2 text-text-muted text-sm">
-            <p>Last updated: {lastUpdated}</p>
-            <p>Data refreshes automatically daily at 9:30 AM ET (market open)</p>
-            <p className="text-xs text-text-muted/50 pt-4">
+        <footer className="mt-32 pt-16 border-t border-white/10 text-center">
+          <div className="space-y-4 text-text-muted text-sm">
+            <p className="text-base">{lastUpdated}</p>
+            <p className="text-base">Data refreshes automatically daily at 9:30 AM ET (market open)</p>
+            <p className="text-xs text-text-muted/60 pt-6">
               Disclaimer: For informational purposes only. Not financial advice. Do your own research.
             </p>
           </div>
