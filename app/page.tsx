@@ -1,8 +1,9 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import Navigation from '@/components/Navigation'
 import Header from '@/components/Header'
-import StockCard from '@/components/StockCard'
+import StockShowcase from '@/components/StockShowcase'
 import MemeCard from '@/components/MemeCard'
 import NewsCard from '@/components/NewsCard'
 import { Zap } from 'lucide-react'
@@ -185,46 +186,55 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-bg-dark text-text-primary">
-      <Header lastUpdated={lastUpdated} onRefresh={loadData} />
+      <Navigation lastUpdated={lastUpdated} onRefresh={loadData} />
+      <Header />
 
-      <main className="max-w-7xl mx-auto px-6 py-12">
-        {/* Stocks Section */}
-        <section className="mb-16">
-          <div className="flex items-center gap-3 mb-8">
-            <h2 className="text-3xl font-bold text-accent-blue">📈 5 Emerging Stock Picks</h2>
-            <span className="text-xs font-semibold bg-accent-blue/20 text-accent-blue px-3 py-1 rounded-full">
-              High Conviction
-            </span>
+      <main className="max-w-7xl mx-auto px-6 pb-20">
+        {/* Stocks Section - Large showcase */}
+        <section className="mb-24">
+          <div className="mb-12">
+            <h2 className="text-4xl font-bold mb-3">
+              <span className="text-text-primary">My Top 5</span>{' '}
+              <span className="bg-gradient-accent bg-clip-text text-transparent">Stock Picks</span>
+            </h2>
+            <p className="text-text-secondary">
+              Smaller, more interesting companies with real catalysts. Updated based on my research.
+            </p>
           </div>
 
           {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[...Array(5)].map((_, i) => (
-                <div key={i} className="h-96 bg-gradient-card border border-card rounded-xl animate-pulse" />
+                <div key={i} className="h-64 bg-gradient-card border border-card rounded-2xl animate-pulse" />
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {stocks.map((stock) => (
-                <StockCard key={stock.symbol} {...stock} />
+                <StockShowcase key={stock.symbol} {...stock} />
               ))}
             </div>
           )}
         </section>
 
         {/* Memecoins Section */}
-        <section className="mb-16">
-          <div className="flex items-center gap-3 mb-8">
-            <h2 className="text-3xl font-bold text-accent-cyan">🚀 Trending Memecoins</h2>
-            <span className="text-xs font-semibold bg-accent-cyan/20 text-accent-cyan px-3 py-1 rounded-full">
-              Volatile Assets
-            </span>
+        <section className="mb-24">
+          <div className="mb-12">
+            <h2 className="text-4xl font-bold mb-3">
+              <span className="text-text-primary">Trending</span>{' '}
+              <span className="bg-gradient-to-r from-accent-cyan to-accent-purple bg-clip-text text-transparent">
+                Memecoins
+              </span>
+            </h2>
+            <p className="text-text-secondary">
+              Top 5 memecoins with RSI analysis and trading signals. High volatility - trade carefully.
+            </p>
           </div>
 
           {loading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...Array(5)].map((_, i) => (
-                <div key={i} className="h-48 bg-gradient-card border border-card rounded-xl animate-pulse" />
+                <div key={i} className="h-48 bg-gradient-card border border-card rounded-2xl animate-pulse" />
               ))}
             </div>
           ) : (
@@ -235,11 +245,11 @@ export default function Home() {
             </div>
           )}
 
-          <div className="mt-6 p-4 bg-accent-orange/10 border border-accent-orange/30 rounded-lg">
-            <div className="flex gap-2">
-              <Zap size={20} className="text-accent-orange flex-shrink-0" />
+          <div className="mt-8 p-6 bg-accent-orange/10 border border-accent-orange/30 rounded-xl">
+            <div className="flex gap-3">
+              <Zap size={24} className="text-accent-orange flex-shrink-0 mt-0.5" />
               <div className="text-sm text-text-secondary">
-                <strong>Memecoin Alert:</strong> These are highly volatile assets. Use RSI and sell signals as guides,
+                <strong className="text-text-primary">Memecoin Alert:</strong> These are highly volatile assets. Use RSI and sell signals as guides,
                 not guarantees. Trade only what you can afford to lose.
               </div>
             </div>
@@ -247,9 +257,17 @@ export default function Home() {
         </section>
 
         {/* News Section */}
-        <section className="mb-16">
-          <div className="flex items-center gap-3 mb-8">
-            <h2 className="text-3xl font-bold text-accent-green">📰 Market Insights & Analysis</h2>
+        <section className="mb-24">
+          <div className="mb-12">
+            <h2 className="text-4xl font-bold mb-3">
+              <span className="text-text-primary">Market</span>{' '}
+              <span className="bg-gradient-to-r from-accent-green to-accent-cyan bg-clip-text text-transparent">
+                Insights
+              </span>
+            </h2>
+            <p className="text-text-secondary">
+              Latest market news with my analysis and sentiment signals.
+            </p>
           </div>
 
           {loading ? (
@@ -268,12 +286,14 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="mt-16 pt-8 border-t border-card text-center text-text-muted text-sm">
-          <p>Last updated: {lastUpdated}</p>
-          <p className="mt-2">Market data updates daily at 9:00 AM ET</p>
-          <p className="mt-4 text-xs text-text-muted/70">
-            Disclaimer: For informational purposes only. Not financial advice. Always do your own research.
-          </p>
+        <footer className="py-12 border-t border-card text-center">
+          <div className="space-y-2 text-text-muted text-sm">
+            <p>Last updated: {lastUpdated}</p>
+            <p>Data refreshes automatically weekdays at 9:00 AM ET</p>
+            <p className="text-xs text-text-muted/50 pt-4">
+              Disclaimer: For informational purposes only. Not financial advice. Do your own research.
+            </p>
+          </div>
         </footer>
       </main>
     </div>

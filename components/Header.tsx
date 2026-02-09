@@ -1,41 +1,18 @@
 'use client'
 
 import React from 'react'
-import { RefreshCw } from 'lucide-react'
 
-interface HeaderProps {
-  lastUpdated: string
-  onRefresh?: () => void
-}
-
-export default function Header({ lastUpdated, onRefresh }: HeaderProps) {
+export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-gradient-to-b from-bg-dark via-bg-card to-bg-dark border-b border-card shadow-lg">
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="flex items-center justify-between mb-4">
-          <div>
-            <h1 className="text-5xl font-bold mb-2 bg-gradient-accent bg-clip-text text-transparent">
-              📊 Market Pulse
-            </h1>
-            <p className="text-text-secondary text-sm">Real-time stock & crypto market intelligence</p>
-          </div>
-          <div className="text-right text-sm text-text-secondary">
-            <p className="mb-2">Last updated</p>
-            <p className="font-mono text-lg text-accent-blue">{lastUpdated}</p>
-          </div>
-        </div>
-
-        {onRefresh && (
-          <div className="mt-6">
-            <button
-              onClick={onRefresh}
-              className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-accent-blue to-accent-cyan text-bg-dark font-semibold rounded-lg hover:shadow-card-hover transition-all duration-200 active:scale-95"
-            >
-              <RefreshCw size={18} />
-              Refresh Data
-            </button>
-          </div>
-        )}
+    <header className="pt-24 pb-16 px-6 bg-gradient-to-b from-bg-card via-bg-dark to-bg-dark">
+      <div className="max-w-7xl mx-auto text-center">
+        <h1 className="text-6xl md:text-7xl font-bold mb-4 leading-tight">
+          <span className="block text-text-primary">Real-Time</span>
+          <span className="block bg-gradient-accent bg-clip-text text-transparent">Market Intelligence</span>
+        </h1>
+        <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+          Curated stock picks & crypto signals. Updated daily at 9 AM ET.
+        </p>
       </div>
     </header>
   )
