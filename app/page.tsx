@@ -51,52 +51,52 @@ export default function Home() {
     setLoading(true)
     try {
       // In a real app, these would fetch from your API endpoints
-      // For now, we'll use mock data
+      // For now, we'll use mock data with my updated stock picks
       const mockStocks: Stock[] = [
         {
-          symbol: 'NVDA',
-          name: 'NVIDIA',
-          price: 135.25,
+          symbol: 'MRVL',
+          name: 'Marvell Technology',
+          price: 92.45,
           change: 2.15,
-          changePercent: 1.62,
-          reason: 'AI spending leader, CEO confirmed $660B capex sustainable. Tech infrastructure backbone.',
-          strength: 9.5,
+          changePercent: 2.38,
+          reason: 'Connected storage and high-speed data center semiconductors. AI infrastructure with less crowding. Customer consolidation tailwind.',
+          strength: 9.1,
         },
         {
-          symbol: 'MSFT',
-          name: 'Microsoft',
-          price: 410.5,
-          change: 3.2,
-          changePercent: 0.79,
-          reason: 'Big Tech earnings winner, AI investments paying off. Enterprise cloud dominance (Azure).',
-          strength: 9.2,
-        },
-        {
-          symbol: 'BRK.B',
-          name: 'Berkshire Hathaway',
-          price: 615.75,
-          change: 2.5,
-          changePercent: 0.41,
-          reason: 'Outperforming tech sell-offs. Safe-haven play during economic uncertainty.',
+          symbol: 'DDOG',
+          name: 'Datadog',
+          price: 198.75,
+          change: 4.2,
+          changePercent: 2.16,
+          reason: 'Cloud monitoring SaaS with 40%+ growth. Enterprise expansion loop. AI features driving new revenue. Operating leverage inflection.',
           strength: 8.8,
         },
         {
-          symbol: 'AAPL',
-          name: 'Apple',
-          price: 230.5,
-          change: 1.25,
-          changePercent: 0.54,
-          reason: 'Large-cap stability pillar. Ecosystem moat. AI integration long-term.',
-          strength: 8.5,
+          symbol: 'CRWD',
+          name: 'CrowdStrike Holdings',
+          price: 385.60,
+          change: 6.5,
+          changePercent: 1.71,
+          reason: 'Endpoint security consolidating enterprise stack. Zero-trust is mandatory. 120%+ NRR. Moving to platform winner.',
+          strength: 8.6,
         },
         {
-          symbol: 'JPM',
-          name: 'JPMorgan Chase',
-          price: 185.25,
-          change: 1.5,
-          changePercent: 0.82,
-          reason: 'Banking strength during uncertainty. Financial system backbone.',
+          symbol: 'NTRA',
+          name: 'Natera Inc',
+          price: 89.20,
+          change: 3.1,
+          changePercent: 3.59,
+          reason: 'Genetic testing + liquid biopsy for cancer detection. TAM expanding as screening becomes standard care. Small-cap gem.',
           strength: 8.2,
+        },
+        {
+          symbol: 'GILD',
+          name: 'Gilead Sciences',
+          price: 87.55,
+          change: 1.2,
+          changePercent: 1.39,
+          reason: 'Biotech with proven cash flow. HIV/Hep C recurring revenue. New CAR-T pipeline. Dividend + buybacks. Value + growth hybrid.',
+          strength: 7.9,
         },
       ]
 
@@ -184,23 +184,23 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-bg-light">
+    <div className="min-h-screen bg-bg-dark text-text-primary">
       <Header lastUpdated={lastUpdated} onRefresh={loadData} />
 
       <main className="max-w-7xl mx-auto px-6 py-12">
         {/* Stocks Section */}
         <section className="mb-16">
           <div className="flex items-center gap-3 mb-8">
-            <h2 className="text-3xl font-bold text-primary">📈 5 Strong Stocks</h2>
-            <span className="text-sm font-semibold bg-secondary text-white px-3 py-1 rounded-full">
-              Daily Updated
+            <h2 className="text-3xl font-bold text-accent-blue">📈 5 Emerging Stock Picks</h2>
+            <span className="text-xs font-semibold bg-accent-blue/20 text-accent-blue px-3 py-1 rounded-full">
+              High Conviction
             </span>
           </div>
 
           {loading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...Array(5)].map((_, i) => (
-                <div key={i} className="card-base h-96 bg-gradient-to-br from-gray-100 to-gray-50 animate-pulse" />
+                <div key={i} className="h-96 bg-gradient-card border border-card rounded-xl animate-pulse" />
               ))}
             </div>
           ) : (
@@ -215,16 +215,16 @@ export default function Home() {
         {/* Memecoins Section */}
         <section className="mb-16">
           <div className="flex items-center gap-3 mb-8">
-            <h2 className="text-3xl font-bold text-primary">🚀 Trending Memecoins</h2>
-            <span className="text-sm font-semibold bg-warning text-white px-3 py-1 rounded-full">
-              Top 5 Trending
+            <h2 className="text-3xl font-bold text-accent-cyan">🚀 Trending Memecoins</h2>
+            <span className="text-xs font-semibold bg-accent-cyan/20 text-accent-cyan px-3 py-1 rounded-full">
+              Volatile Assets
             </span>
           </div>
 
           {loading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...Array(5)].map((_, i) => (
-                <div key={i} className="card-base h-48 bg-gradient-to-br from-gray-100 to-gray-50 animate-pulse" />
+                <div key={i} className="h-48 bg-gradient-card border border-card rounded-xl animate-pulse" />
               ))}
             </div>
           ) : (
@@ -235,10 +235,10 @@ export default function Home() {
             </div>
           )}
 
-          <div className="mt-6 p-4 bg-warning bg-opacity-10 border border-warning border-opacity-30 rounded-lg">
+          <div className="mt-6 p-4 bg-accent-orange/10 border border-accent-orange/30 rounded-lg">
             <div className="flex gap-2">
-              <Zap size={20} className="text-warning flex-shrink-0" />
-              <div className="text-sm text-text-dark">
+              <Zap size={20} className="text-accent-orange flex-shrink-0" />
+              <div className="text-sm text-text-secondary">
                 <strong>Memecoin Alert:</strong> These are highly volatile assets. Use RSI and sell signals as guides,
                 not guarantees. Trade only what you can afford to lose.
               </div>
@@ -247,15 +247,15 @@ export default function Home() {
         </section>
 
         {/* News Section */}
-        <section>
+        <section className="mb-16">
           <div className="flex items-center gap-3 mb-8">
-            <h2 className="text-3xl font-bold text-primary">📰 Market Insights & News</h2>
+            <h2 className="text-3xl font-bold text-accent-green">📰 Market Insights & Analysis</h2>
           </div>
 
           {loading ? (
             <div className="space-y-4">
               {[...Array(3)].map((_, i) => (
-                <div key={i} className="card-base h-24 bg-gradient-to-br from-gray-100 to-gray-50 animate-pulse" />
+                <div key={i} className="h-24 bg-gradient-card border border-card rounded-xl animate-pulse" />
               ))}
             </div>
           ) : (
@@ -268,11 +268,11 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="mt-16 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
+        <footer className="mt-16 pt-8 border-t border-card text-center text-text-muted text-sm">
           <p>Last updated: {lastUpdated}</p>
-          <p className="mt-2">Market data updates daily at 9:00 AM ET via GitHub Actions</p>
-          <p className="mt-4 text-xs">
-            Disclaimer: This is for informational purposes only. Not financial advice. Always do your own research.
+          <p className="mt-2">Market data updates daily at 9:00 AM ET</p>
+          <p className="mt-4 text-xs text-text-muted/70">
+            Disclaimer: For informational purposes only. Not financial advice. Always do your own research.
           </p>
         </footer>
       </main>

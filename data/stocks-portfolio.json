@@ -1,83 +1,83 @@
 {
   "stocks": [
     {
-      "symbol": "NVDA",
-      "name": "NVIDIA",
+      "symbol": "MRVL",
+      "name": "Marvell Technology",
       "addedDate": "2026-02-08",
-      "lastReviewDate": "2026-02-09",
-      "reason": "Uncontested AI infrastructure leader. $660B capex program confirms long-term commitment. Every major AI player depends on their GPUs. Pricing power is immense.",
-      "strength": 9.6,
+      "lastReviewDate": "2026-02-08",
+      "reason": "Connected storage and high-speed data center semiconductors. AI infrastructure play with less crowding than NVDA. Customers consolidating suppliers to Marvell for storage + networking. Strong execution, 30%+ revenue growth.",
+      "strength": 9.1,
       "fundamentals": {
-        "pe_ratio": 72.5,
-        "growth_rate": 35,
-        "market_cap": 3200000000000,
-        "52w_high": 135,
-        "52w_low": 65,
-        "catalyst": "AI spending acceleration, data center buildout"
+        "pe_ratio": 28,
+        "growth_rate": 32,
+        "market_cap": 85000000000,
+        "52w_high": 95,
+        "52w_low": 42,
+        "catalyst": "Data center consolidation, AI storage demand, networking TAM expansion"
       }
     },
     {
-      "symbol": "MSFT",
-      "name": "Microsoft",
+      "symbol": "DDOG",
+      "name": "Datadog",
       "addedDate": "2026-02-08",
-      "lastReviewDate": "2026-02-09",
-      "reason": "Big Tech earnings winner this season. OpenAI partnership paying dividends. Azure capturing enterprise AI workloads. Office 365 + Copilot integration creates new revenue stream.",
-      "strength": 9.3,
+      "lastReviewDate": "2026-02-08",
+      "reason": "Cloud monitoring SaaS with recurring revenue model. Enterprise customers expanding Datadog footprint across infrastructure. AI integration into monitoring is creating new revenue streams. 40%+ revenue growth, path to 25%+ FCF margins.",
+      "strength": 8.8,
       "fundamentals": {
-        "pe_ratio": 35.2,
-        "growth_rate": 16,
-        "market_cap": 3100000000000,
-        "52w_high": 420,
-        "52w_low": 310,
-        "catalyst": "Enterprise AI adoption, cloud margins expanding"
+        "pe_ratio": 85,
+        "growth_rate": 38,
+        "market_cap": 55000000000,
+        "52w_high": 215,
+        "52w_low": 85,
+        "catalyst": "Improved operating leverage, AI features driving expansion, marketplace growth"
       }
     },
     {
-      "symbol": "SMCI",
-      "name": "Super Micro Computer",
-      "addedDate": "2026-02-09",
-      "lastReviewDate": "2026-02-09",
-      "reason": "AI hardware infrastructure play. Server/switch demand exploding as data centers scale. Benefits from NVIDIA demand without being subject to same geopolitical scrutiny. Emerging from accounting issues with strong execution.",
-      "strength": 8.9,
+      "symbol": "CRWD",
+      "name": "CrowdStrike Holdings",
+      "addedDate": "2026-02-08",
+      "lastReviewDate": "2026-02-08",
+      "reason": "Endpoint security leader consolidating enterprise security stack. Zero-trust architecture is now mandatory after breach epidemics. Net retention >120%. Moving from point solution to comprehensive platform. High gross margins 80%+.",
+      "strength": 8.6,
       "fundamentals": {
-        "pe_ratio": 45,
-        "growth_rate": 42,
-        "market_cap": 80000000000,
-        "52w_high": 890,
-        "52w_low": 420,
-        "catalyst": "Data center capex acceleration, supply chain partnerships"
+        "pe_ratio": 48,
+        "growth_rate": 25,
+        "market_cap": 40000000000,
+        "52w_high": 450,
+        "52w_low": 185,
+        "catalyst": "Platform consolidation wins, deferred revenue inflection, international expansion"
       }
     },
     {
-      "symbol": "PSTG",
-      "name": "Pure Storage",
-      "addedDate": "2026-02-09",
-      "lastReviewDate": "2026-02-09",
-      "reason": "Enterprise storage for AI workloads. High-margin SaaS business model. Data creation from AI = storage demand explosion. Stable revenue, expanding margins.",
-      "strength": 8.5,
-      "fundamentals": {
-        "pe_ratio": 38,
-        "growth_rate": 18,
-        "market_cap": 14000000000,
-        "52w_high": 68,
-        "52w_low": 38,
-        "catalyst": "AI data storage growth, enterprise migration to cloud"
-      }
-    },
-    {
-      "symbol": "COIN",
-      "name": "Coinbase",
-      "addedDate": "2026-02-09",
-      "lastReviewDate": "2026-02-09",
-      "reason": "Crypto market infrastructure leader. BTC/ETH strength supports retail and institutional on-ramps. Regulatory clarity improving (Trump administration). Earnings growing with crypto prices. Lower correlation to stocks.",
+      "symbol": "NTRA",
+      "name": "Natera Inc",
+      "addedDate": "2026-02-08",
+      "lastReviewDate": "2026-02-08",
+      "reason": "Genetic testing pioneer with liquid biopsy technology for cancer detection. TAM expanding as screening becomes standard care. Transitioning to subscription model for recurring revenue. Real healthcare technology with defensive moat. High risk/high reward.",
       "strength": 8.2,
       "fundamentals": {
-        "pe_ratio": 22,
+        "pe_ratio": null,
         "growth_rate": 35,
-        "market_cap": 41000000000,
-        "52w_high": 195,
-        "52w_low": 85,
-        "catalyst": "Crypto bull market, regulatory tailwinds, spot ETF inflows"
+        "market_cap": 8000000000,
+        "52w_high": 120,
+        "52w_low": 28,
+        "catalyst": "Cancer screening TAM expansion, insurance reimbursement increases, subscription adoption"
+      }
+    },
+    {
+      "symbol": "GILD",
+      "name": "Gilead Sciences",
+      "addedDate": "2026-02-08",
+      "lastReviewDate": "2026-02-08",
+      "reason": "Biotech with proven cash flow generation and strong R&D pipeline. Portfolio includes HIV, hepatitis C treatments with recurring revenue. More contrarian than pure SaaS plays. Dividend yield + growth. Real drugs for real diseases.",
+      "strength": 7.9,
+      "fundamentals": {
+        "pe_ratio": 12,
+        "growth_rate": 8,
+        "market_cap": 70000000000,
+        "52w_high": 92,
+        "52w_low": 68,
+        "catalyst": "New CAR-T approvals, liver disease pipeline, dividend + buybacks"
       }
     }
   ],
@@ -93,6 +93,12 @@
       "action": "Strategic portfolio revision - AI infrastructure focus",
       "stocks_selected": ["NVDA", "MSFT", "SMCI", "PSTG", "COIN"],
       "reasoning": "Thesis: AI infrastructure buildout (SMCI servers) + storage for AI data (PSTG) + AI cloud leaders (NVDA, MSFT) + crypto as alternative inflation hedge and sector momentum play (COIN). All 5 have >8.2 strength with clear catalysts."
+    },
+    {
+      "date": "2026-02-08",
+      "action": "Portfolio redesign - smaller cap, more interesting companies",
+      "stocks_selected": ["MRVL", "DDOG", "CRWD", "NTRA", "GILD"],
+      "reasoning": "Thesis: Move away from mega-cap safety plays. MRVL + DDOG benefit from AI/cloud growth but less crowded. CRWD is platform consolidation winner. NTRA is small-cap genetic testing revolutionizing healthcare. GILD is contrarian biotech with cash flow. Mix of growth (NTRA, DDOG, MRVL) and value (GILD) with real catalysts."
     }
   ]
 }
