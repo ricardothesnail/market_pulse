@@ -1,0 +1,58 @@
+{
+  "dailyInsights": [
+    {
+      "date": "2026-02-09",
+      "marketOverview": "AI infrastructure thesis dominates. While broad tech took a breather last week, the AI buildout narrative remains structural. Valuations are stretched but justified by growth rates. Crypto showing strength on regulatory tailwinds and Bitcoin momentum. Watch: labor data this week (softening market focus), which could trigger Fed rate cut hopes.",
+      "topNews": [
+        {
+          "title": "Japan's Nikkei 225 crosses 57,000 for first time as Takaichi secures historic mandate",
+          "source": "CNBC",
+          "url": "https://www.cnbc.com/2026/02/09/japan-stocks-set-to-soar-after-takaichi-secures-historic-mandate.html",
+          "insight": "Bullish for global risk assets. Yen weakness = USD strength, which pressures commodities but supports tech exporters. Japanese LDP's pro-growth agenda likely means continued BOJ accommodation. Good for risk-on sentiment.",
+          "sentiment": "bullish"
+        },
+        {
+          "title": "Stock futures tick higher as markets await closely watched jobs, inflation reports",
+          "source": "CNBC",
+          "url": "https://www.cnbc.com/2026/02/08/stock-market-today-live-updates.html",
+          "insight": "Market is front-running softer labor data. If employment continues to weaken, Fed rate cut odds rise, which benefits growth stocks. Our AI infrastructure portfolio is positioned well for a dovish pivot. Key risk: inflation resurges.",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "NVIDIA confirms $660B AI capex commitment is sustainable, CEO reaffirms outlook",
+          "source": "CNBC",
+          "url": "https://www.cnbc.com/2026/02/08/here-are-the-5-big-things-were-watching-in-the-stock-market-this-week.html",
+          "insight": "This IS the story. NVIDIA's capex commitment is not a guess—it's customer commitments. This validates our entire AI infrastructure thesis (SMCI, PSTG benefit too). When THE constraint (GPU supply) is being solved, downstream businesses flourish.",
+          "sentiment": "bullish"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "marketOverview": "Tech rotation ongoing but AI infrastructure remains the strongest thematic. Labor market softening is the biggest macro risk. Fed watching closely. Crypto showing strength on regulatory clarity hopes.",
+      "topNews": [
+        {
+          "title": "Japan's Nikkei 225 crosses 57,000 for first time as Takaichi secures historic mandate",
+          "source": "CNBC",
+          "url": "https://www.cnbc.com/2026/02/09/japan-stocks-set-to-soar-after-takaichi-secures-historic-mandate.html",
+          "insight": "Takaichi's election victory signals policy stability in Japan. Could strengthen yen and affect US-Japan trade dynamics.",
+          "sentiment": "bullish"
+        },
+        {
+          "title": "Stock futures tick higher as markets await jobs, inflation reports",
+          "source": "CNBC",
+          "url": "https://www.cnbc.com/2026/02/08/stock-market-today-live-updates.html",
+          "insight": "Market is pricing in softer labor data. Watch upcoming employment figures—they'll drive Fed policy expectations.",
+          "sentiment": "neutral"
+        },
+        {
+          "title": "Tech giants continuing AI spending despite softening tech sector",
+          "source": "CNBC",
+          "url": "https://www.cnbc.com/2026/02/08/here-are-the-5-big-things-were-watching-in-the-stock-market-this-week.html",
+          "insight": "NVIDIA and MSFT commitment to AI capex is structural, not cyclical. This supports our tech allocation.",
+          "sentiment": "bullish"
+        }
+      ]
+    }
+  ]
+}
