@@ -1,0 +1,29 @@
+{
+  "news": [
+    {
+      "title": "Japan's Nikkei 225 crosses 57,000 for first time as Takaichi secures historic mandate",
+      "description": "Takaichi win signals policy stability in Japan. Could strengthen yen and affect US-Japan dynamics.",
+      "url": "https://www.cnbc.com/2026/02/09/japan-stocks-set-to-soar-after-takaichi-secures-historic-mandate.html",
+      "source": "CNBC",
+      "image": "https://images.cnbc.com/default.jpg",
+      "publishedAt": "2026-02-08T16:30:00Z"
+    },
+    {
+      "title": "Stock futures tick higher as markets await closely watched jobs, inflation reports",
+      "description": "Market pricing in softer labor data. Watch employment figures—they drive Fed policy.",
+      "url": "https://www.cnbc.com/2026/02/08/stock-market-today-live-updates.html",
+      "source": "CNBC",
+      "image": "https://images.cnbc.com/default.jpg",
+      "publishedAt": "2026-02-08T15:45:00Z"
+    },
+    {
+      "title": "Tech giants continue AI spending despite softening tech sector",
+      "description": "NVIDIA/MSFT capex is structural, not cyclical. Supports our tech allocation.",
+      "url": "https://www.cnbc.com/2026/02/08/here-are-the-5-big-things-were-watching-in-the-stock-market-this-week.html",
+      "source": "CNBC",
+      "image": "https://images.cnbc.com/default.jpg",
+      "publishedAt": "2026-02-08T14:20:00Z"
+    }
+  ],
+  "last_updated": "2026-02-08T20:56:00Z"
+}

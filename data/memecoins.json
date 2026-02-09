@@ -1,0 +1,65 @@
+{
+  "memecoins": [
+    {
+      "id": "pepe",
+      "symbol": "PEPE",
+      "name": "Pepe",
+      "current_price": 0.000003752,
+      "market_cap": "$1.55B",
+      "price_change_24h": -2.96,
+      "rsi": 45.2,
+      "sellSignal": "HOLD",
+      "image": "https://assets.coingecko.com/coins/images/29850/large/pepe-token.jpeg",
+      "last_updated": "2026-02-08T20:56:00Z"
+    },
+    {
+      "id": "shiba-inu",
+      "symbol": "SHIB",
+      "name": "Shiba Inu",
+      "current_price": 0.000006086,
+      "market_cap": "$3.59B",
+      "price_change_24h": -3.09,
+      "rsi": 38.5,
+      "sellSignal": "BUY",
+      "image": "https://assets.coingecko.com/coins/images/11939/large/shib.png",
+      "last_updated": "2026-02-08T20:56:00Z"
+    },
+    {
+      "id": "dogecoin",
+      "symbol": "DOGE",
+      "name": "Dogecoin",
+      "current_price": 0.09591,
+      "market_cap": "$16.18B",
+      "price_change_24h": -2.26,
+      "rsi": 52.1,
+      "sellSignal": "HOLD",
+      "image": "https://assets.coingecko.com/coins/images/5/large/dogecoin.png",
+      "last_updated": "2026-02-08T20:56:00Z"
+    },
+    {
+      "id": "floki",
+      "symbol": "FLOKI",
+      "name": "Floki Inu",
+      "current_price": 0.000234,
+      "market_cap": "$245M",
+      "price_change_24h": 5.32,
+      "rsi": 68.7,
+      "sellSignal": "SELL",
+      "image": "https://assets.coingecko.com/coins/images/16621/large/1_dexScreenshot_20211221-03-21-48.png",
+      "last_updated": "2026-02-08T20:56:00Z"
+    },
+    {
+      "id": "dogwifhat",
+      "symbol": "WIF",
+      "name": "dogwifhat",
+      "current_price": 0.287,
+      "market_cap": "$867M",
+      "price_change_24h": 12.45,
+      "rsi": 72.3,
+      "sellSignal": "STRONG_SELL",
+      "image": "https://assets.coingecko.com/coins/images/33566/large/DWF.png",
+      "last_updated": "2026-02-08T20:56:00Z"
+    }
+  ],
+  "last_updated": "2026-02-08T20:56:00Z"
+}
