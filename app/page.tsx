@@ -150,17 +150,17 @@ export default function Home() {
         <section className="mb-32">
           <h2 className="text-4xl font-black text-joy-cyan mb-12 text-center">My Top 5 Stock Picks</h2>
 
-          {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[...Array(5)].map((_, i) => (
-                <div key={i} className="h-96 bg-gradient-dark border-2 border-white/10 rounded-2xl animate-pulse" />
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {stocks.map((stock) => (
-                <StockCard key={stock.symbol} {...stock} />
-              ))}
+           {loading ? (
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center max-w-4xl mx-auto">
+               {[...Array(5)].map((_, i) => (
+                 <div key={i} className="h-96 w-full bg-gradient-dark border-2 border-white/10 rounded-2xl animate-pulse" />
+               ))}
+             </div>
+           ) : (
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center max-w-4xl mx-auto">
+               {stocks.map((stock) => (
+                 <StockCard key={stock.symbol} {...stock} />
+               ))}
             </div>
           )}
         </section>
@@ -170,17 +170,17 @@ export default function Home() {
           <h2 className="text-4xl font-black text-joy-magenta mb-4 text-center">🚀 Trending Memecoins</h2>
           <p className="text-text-secondary mb-12 text-center">High volatility for high stakes. Check RSI and signals, but trade with caution.</p>
 
-          {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[...Array(5)].map((_, i) => (
-                <div key={i} className="h-48 bg-gradient-dark border-2 border-white/10 rounded-xl animate-pulse" />
-              ))}
-            </div>
-          ) : memecoins.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {memecoins.map((coin) => (
-                <MemeCard key={coin.symbol} {...coin} />
-              ))}
+           {loading ? (
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center max-w-5xl mx-auto">
+               {[...Array(5)].map((_, i) => (
+                 <div key={i} className="h-48 w-full bg-gradient-dark border-2 border-white/10 rounded-xl animate-pulse" />
+               ))}
+             </div>
+           ) : memecoins.length > 0 ? (
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center max-w-5xl mx-auto">
+               {memecoins.map((coin) => (
+                 <MemeCard key={coin.symbol} {...coin} />
+               ))}
             </div>
           ) : (
             <div className="p-6 bg-gradient-dark border-2 border-white/10 rounded-xl text-center">
@@ -188,15 +188,15 @@ export default function Home() {
             </div>
           )}
 
-          <div className="mt-8 p-6 bg-gradient-to-r from-joy-orange/20 to-joy-pink/20 border-2 border-joy-orange rounded-xl">
-            <div className="flex gap-3">
-              <Zap size={24} className="text-joy-orange flex-shrink-0 mt-0.5" />
-              <div className="text-sm text-text-secondary">
-                <strong className="text-joy-orange">Memecoin Alert:</strong> These are highly volatile assets. Use RSI and sell signals as guides,
-                not guarantees. Trade only what you can afford to lose.
-              </div>
-            </div>
-          </div>
+           <div className="mt-8 p-6 bg-gradient-to-r from-joy-orange/20 to-joy-pink/20 border-2 border-joy-orange rounded-xl max-w-5xl mx-auto">
+             <div className="flex gap-3">
+               <Zap size={24} className="text-joy-orange flex-shrink-0 mt-0.5" />
+               <div className="text-sm text-text-secondary">
+                 <strong className="text-joy-orange">Memecoin Alert:</strong> These are highly volatile assets. Use RSI and sell signals as guides,
+                 not guarantees. Trade only what you can afford to lose.
+               </div>
+             </div>
+           </div>
         </section>
 
         {/* News Section */}
@@ -204,23 +204,23 @@ export default function Home() {
           <h2 className="text-4xl font-black text-joy-green mb-4 text-center">📰 Market News & Insights</h2>
           <p className="text-text-secondary mb-12 text-center">Latest market developments with sentiment analysis.</p>
 
-          {loading ? (
-            <div className="space-y-4">
-              {[...Array(3)].map((_, i) => (
-                <div key={i} className="h-24 bg-gradient-dark border-2 border-white/10 rounded-xl animate-pulse" />
-              ))}
+           {loading ? (
+             <div className="space-y-4 max-w-3xl mx-auto">
+               {[...Array(3)].map((_, i) => (
+                 <div key={i} className="h-24 bg-gradient-dark border-2 border-white/10 rounded-xl animate-pulse" />
+               ))}
+             </div>
+           ) : news.length > 0 ? (
+             <div className="space-y-4 max-w-3xl mx-auto">
+               {news.map((item, idx) => (
+                 <NewsCard key={idx} {...item} />
+               ))}
             </div>
-          ) : news.length > 0 ? (
-            <div className="space-y-4">
-              {news.map((item, idx) => (
-                <NewsCard key={idx} {...item} />
-              ))}
-            </div>
-          ) : (
-            <div className="p-6 bg-gradient-dark border-2 border-white/10 rounded-xl text-center">
-              <p className="text-text-secondary">No news data available yet. Check back after the market update.</p>
-            </div>
-          )}
+           ) : (
+             <div className="p-6 bg-gradient-dark border-2 border-white/10 rounded-xl text-center max-w-3xl mx-auto">
+               <p className="text-text-secondary">No news data available yet. Check back after the market update.</p>
+             </div>
+           )}
         </section>
 
         {/* Footer */}
