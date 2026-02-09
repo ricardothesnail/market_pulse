@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react'
 import Navigation from '@/components/Navigation'
 import StockCard from '@/components/StockCard'
 import MemeCard from '@/components/MemeCard'
-import NewsCard from '@/components/NewsCard'
 import { Zap } from 'lucide-react'
 
 interface Stock {
@@ -30,14 +29,6 @@ interface Memecoin {
   image?: string
 }
 
-interface NewsItem {
-  title: string
-  source: string
-  url: string
-  insight: string
-  sentiment: 'bullish' | 'bearish' | 'neutral'
-}
-
 // Color assignments for stocks
 const STOCK_COLORS: Record<string, { colorGradient: string; glowColor: string }> = {
   MRVL: { colorGradient: 'gradient-joy-purple', glowColor: 'shadow-glow-purple' },
@@ -50,7 +41,6 @@ const STOCK_COLORS: Record<string, { colorGradient: string; glowColor: string }>
 export default function Home() {
   const [stocks, setStocks] = useState<Stock[]>([])
   const [memecoins, setMemecoins] = useState<Memecoin[]>([])
-  const [news, setNews] = useState<NewsItem[]>([])
   const [loading, setLoading] = useState(true)
   const [lastUpdated, setLastUpdated] = useState('Loading...')
 
@@ -97,21 +87,6 @@ export default function Home() {
         setMemecoins(formattedMemes)
       }
 
-      // Fetch news
-      const newsRes = await fetch('/api/news')
-      const newsData = await newsRes.json()
-      
-      if (newsData.news && newsData.news.length > 0) {
-        const formattedNews: NewsItem[] = newsData.news.map((item: any) => ({
-          title: item.title,
-          source: item.source,
-          url: item.url,
-          insight: item.description || item.insight || '',
-          sentiment: determineSentiment(item.title, item.description),
-        }))
-        setNews(formattedNews)
-      }
-
       setLastUpdated(new Date().toLocaleString())
     } catch (error) {
       console.error('Error loading data:', error)
@@ -140,24 +115,24 @@ export default function Home() {
             <span className="block text-joy-purple">Stock Picks</span>
           </h1>
           <p className="text-xl text-text-secondary mb-8">
-            Deep research into smaller, more interesting companies. Click into each for the full thesis, catalysts, and risks.
+            Smaller, more interesting companies with clear investment theses and real catalysts.
           </p>
         </div>
       </div>
 
       <main className="max-w-6xl mx-auto px-6 pb-20 flex flex-col items-center">
         {/* Stock Gallery Section */}
-        <section className="mb-32 w-full">
-          <h2 className="text-4xl font-black text-joy-cyan mb-12 text-center">My Top 5 Stock Picks</h2>
+        <section className="mb-32 w-full max-w-5xl">
+          <h2 className="text-4xl font-black text-joy-cyan mb-12 text-center">Stocks to Watch</h2>
 
-          {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto">
+           {loading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto max-w-5xl w-full">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="h-96 bg-gradient-dark border-2 border-white/10 rounded-2xl animate-pulse" />
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto max-w-5xl w-full">
               {stocks.map((stock) => (
                 <StockCard key={stock.symbol} {...stock} />
               ))}
@@ -166,29 +141,29 @@ export default function Home() {
         </section>
 
         {/* Memecoins Section */}
-        <section className="mb-32 w-full">
+        <section className="mb-32 w-full max-w-5xl">
           <h2 className="text-4xl font-black text-joy-magenta mb-4 text-center">🚀 Trending Memecoins</h2>
           <p className="text-text-secondary mb-12 text-center">High volatility for high stakes. Check RSI and signals, but trade with caution.</p>
 
           {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto max-w-5xl w-full">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="h-48 bg-gradient-dark border-2 border-white/10 rounded-xl animate-pulse" />
               ))}
             </div>
           ) : memecoins.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto max-w-5xl w-full">
               {memecoins.map((coin) => (
                 <MemeCard key={coin.symbol} {...coin} />
               ))}
             </div>
           ) : (
-            <div className="p-6 bg-gradient-dark border-2 border-white/10 rounded-xl text-center">
+            <div className="p-6 bg-gradient-dark border-2 border-white/10 rounded-xl text-center mx-auto max-w-5xl w-full">
               <p className="text-text-secondary">No memecoin data available yet. Check back after the market update.</p>
             </div>
           )}
 
-          <div className="mt-8 p-6 bg-gradient-to-r from-joy-orange/20 to-joy-pink/20 border-2 border-joy-orange rounded-xl w-full">
+          <div className="mt-8 p-6 bg-gradient-to-r from-joy-orange/20 to-joy-pink/20 border-2 border-joy-orange rounded-xl w-full max-w-5xl mx-auto">
             <div className="flex gap-3">
               <Zap size={24} className="text-joy-orange flex-shrink-0 mt-0.5" />
               <div className="text-sm text-text-secondary">
@@ -199,40 +174,27 @@ export default function Home() {
           </div>
         </section>
 
-        {/* News Section */}
-        <section className="mb-32 w-full">
-          <h2 className="text-4xl font-black text-joy-green mb-4 text-center">📰 Market News & Insights</h2>
-          <p className="text-text-secondary mb-12 text-center">Latest market developments with sentiment analysis.</p>
-
-          {loading ? (
-            <div className="space-y-4 mx-auto max-w-3xl">
-              {[...Array(3)].map((_, i) => (
-                <div key={i} className="h-24 bg-gradient-dark border-2 border-white/10 rounded-xl animate-pulse" />
-              ))}
+        {/* Footer with Disclaimers */}
+        <section className="w-full max-w-5xl mt-48 pt-16 border-t border-white/10">
+          <div className="space-y-6 text-center">
+            <div className="text-text-secondary text-sm">
+              <p className="mb-4">Last updated: {lastUpdated}</p>
+              <p className="mb-4">Data refreshes automatically daily at 9:30 AM ET (market open)</p>
             </div>
-          ) : news.length > 0 ? (
-            <div className="space-y-4 mx-auto max-w-3xl">
-              {news.map((item, idx) => (
-                <NewsCard key={idx} {...item} />
-              ))}
+            
+            <div className="bg-gradient-to-r from-joy-orange/10 to-joy-pink/10 border-2 border-white/10 rounded-xl p-8 space-y-4">
+              <h3 className="text-joy-orange font-bold text-lg">Important Disclaimers</h3>
+              <ul className="text-text-muted text-xs space-y-3 text-left max-w-2xl mx-auto">
+                <li><strong>Not Financial Advice:</strong> This content is for informational purposes only and should not be considered financial, investment, or trading advice.</li>
+                <li><strong>Do Your Own Research:</strong> All stocks listed here require independent research and due diligence before any investment decision.</li>
+                <li><strong>Risk Disclosure:</strong> Stock investments carry significant risk, including loss of principal. Past performance does not guarantee future results.</li>
+                <li><strong>Memecoin Warning:</strong> Memecoins are highly speculative and volatile. They can lose value rapidly. Only invest what you can afford to lose completely.</li>
+                <li><strong>Market Volatility:</strong> Prices and market conditions change rapidly. Data shown may not reflect real-time prices.</li>
+                <li><strong>No Guarantees:</strong> Strength scores and signals are based on analysis, not guarantees of performance.</li>
+              </ul>
             </div>
-          ) : (
-            <div className="p-6 bg-gradient-dark border-2 border-white/10 rounded-xl text-center">
-              <p className="text-text-secondary">No news data available yet. Check back after the market update.</p>
-            </div>
-          )}
-        </section>
-
-        {/* Footer */}
-        <footer className="mt-32 pt-16 border-t border-white/10 text-center">
-          <div className="space-y-4 text-text-muted text-sm">
-            <p className="text-base">{lastUpdated}</p>
-            <p className="text-base">Data refreshes automatically daily at 9:30 AM ET (market open)</p>
-            <p className="text-xs text-text-muted/60 pt-6">
-              Disclaimer: For informational purposes only. Not financial advice. Do your own research.
-            </p>
           </div>
-        </footer>
+        </section>
       </main>
     </div>
   )
