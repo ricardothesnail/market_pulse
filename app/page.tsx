@@ -145,19 +145,19 @@ export default function Home() {
         </div>
       </div>
 
-      <main className="max-w-6xl mx-auto px-6 pb-20">
+      <main className="max-w-6xl mx-auto px-6 pb-20 flex flex-col items-center">
         {/* Stock Gallery Section */}
-        <section className="mb-32">
+        <section className="mb-32 w-full">
           <h2 className="text-4xl font-black text-joy-cyan mb-12 text-center">My Top 5 Stock Picks</h2>
 
           {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="h-96 bg-gradient-dark border-2 border-white/10 rounded-2xl animate-pulse" />
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto">
               {stocks.map((stock) => (
                 <StockCard key={stock.symbol} {...stock} />
               ))}
@@ -166,18 +166,18 @@ export default function Home() {
         </section>
 
         {/* Memecoins Section */}
-        <section className="mb-32">
+        <section className="mb-32 w-full">
           <h2 className="text-4xl font-black text-joy-magenta mb-4 text-center">🚀 Trending Memecoins</h2>
           <p className="text-text-secondary mb-12 text-center">High volatility for high stakes. Check RSI and signals, but trade with caution.</p>
 
           {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="h-48 bg-gradient-dark border-2 border-white/10 rounded-xl animate-pulse" />
               ))}
             </div>
           ) : memecoins.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
               {memecoins.map((coin) => (
                 <MemeCard key={coin.symbol} {...coin} />
               ))}
@@ -188,7 +188,7 @@ export default function Home() {
             </div>
           )}
 
-          <div className="mt-8 p-6 bg-gradient-to-r from-joy-orange/20 to-joy-pink/20 border-2 border-joy-orange rounded-xl">
+          <div className="mt-8 p-6 bg-gradient-to-r from-joy-orange/20 to-joy-pink/20 border-2 border-joy-orange rounded-xl w-full">
             <div className="flex gap-3">
               <Zap size={24} className="text-joy-orange flex-shrink-0 mt-0.5" />
               <div className="text-sm text-text-secondary">
@@ -200,18 +200,18 @@ export default function Home() {
         </section>
 
         {/* News Section */}
-        <section className="mb-32">
+        <section className="mb-32 w-full">
           <h2 className="text-4xl font-black text-joy-green mb-4 text-center">📰 Market News & Insights</h2>
           <p className="text-text-secondary mb-12 text-center">Latest market developments with sentiment analysis.</p>
 
           {loading ? (
-            <div className="space-y-4 w-full">
+            <div className="space-y-4 mx-auto max-w-3xl">
               {[...Array(3)].map((_, i) => (
                 <div key={i} className="h-24 bg-gradient-dark border-2 border-white/10 rounded-xl animate-pulse" />
               ))}
             </div>
           ) : news.length > 0 ? (
-            <div className="space-y-4 w-full">
+            <div className="space-y-4 mx-auto max-w-3xl">
               {news.map((item, idx) => (
                 <NewsCard key={idx} {...item} />
               ))}
