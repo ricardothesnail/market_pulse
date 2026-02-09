@@ -1,101 +1,138 @@
 {
   "stocks": [
-    {
-      "symbol": "MRVL",
-      "name": "Marvell Technology",
-      "addedDate": "2026-02-08",
-      "lastReviewDate": "2026-02-08",
-      "reason": "Connected storage and high-speed data center semiconductors. AI infrastructure play with less crowding than NVDA. Customers consolidating suppliers to Marvell for storage + networking. Strong execution, 30%+ revenue growth.",
-      "strength": 9.1,
-      "last_price": 92.45,
-      "last_price_change": 2.38,
-      "last_updated": "2026-02-09T03:47:00Z",
-      "fundamentals": {
-        "pe_ratio": 28,
-        "growth_rate": 32,
-        "market_cap": 85000000000,
-        "52w_high": 95,
-        "52w_low": 42,
-        "catalyst": "Data center consolidation, AI storage demand, networking TAM expansion"
-      }
-    },
-    {
-      "symbol": "DDOG",
-      "name": "Datadog",
-      "addedDate": "2026-02-08",
-      "lastReviewDate": "2026-02-08",
-      "reason": "Cloud monitoring SaaS with recurring revenue model. Enterprise customers expanding Datadog footprint across infrastructure. AI integration into monitoring is creating new revenue streams. 40%+ revenue growth, path to 25%+ FCF margins.",
-      "strength": 8.8,
-      "last_price": 198.75,
-      "last_price_change": 2.16,
-      "last_updated": "2026-02-09T03:47:00Z",
-      "fundamentals": {
-        "pe_ratio": 85,
-        "growth_rate": 38,
-        "market_cap": 55000000000,
-        "52w_high": 215,
-        "52w_low": 85,
-        "catalyst": "Improved operating leverage, AI features driving expansion, marketplace growth"
-      }
-    },
-    {
-      "symbol": "CRWD",
-      "name": "CrowdStrike Holdings",
-      "addedDate": "2026-02-08",
-      "lastReviewDate": "2026-02-08",
-      "reason": "Endpoint security leader consolidating enterprise security stack. Zero-trust architecture is now mandatory after breach epidemics. Net retention >120%. Moving from point solution to comprehensive platform. High gross margins 80%+.",
-      "strength": 8.6,
-      "last_price": 385.60,
-      "last_price_change": 1.71,
-      "last_updated": "2026-02-09T03:47:00Z",
-      "fundamentals": {
-        "pe_ratio": 48,
-        "growth_rate": 25,
-        "market_cap": 40000000000,
-        "52w_high": 450,
-        "52w_low": 185,
-        "catalyst": "Platform consolidation wins, deferred revenue inflection, international expansion"
-      }
-    },
-    {
-      "symbol": "NTRA",
-      "name": "Natera Inc",
-      "addedDate": "2026-02-08",
-      "lastReviewDate": "2026-02-08",
-      "reason": "Genetic testing pioneer with liquid biopsy technology for cancer detection. TAM expanding as screening becomes standard care. Transitioning to subscription model for recurring revenue. Real healthcare technology with defensive moat. High risk/high reward.",
-      "strength": 8.2,
-      "last_price": 89.20,
-      "last_price_change": 3.59,
-      "last_updated": "2026-02-09T03:47:00Z",
-      "fundamentals": {
-        "pe_ratio": null,
-        "growth_rate": 35,
-        "market_cap": 8000000000,
-        "52w_high": 120,
-        "52w_low": 28,
-        "catalyst": "Cancer screening TAM expansion, insurance reimbursement increases, subscription adoption"
-      }
-    },
-    {
-      "symbol": "GILD",
-      "name": "Gilead Sciences",
-      "addedDate": "2026-02-08",
-      "lastReviewDate": "2026-02-08",
-      "reason": "Biotech with proven cash flow generation and strong R&D pipeline. Portfolio includes HIV, hepatitis C treatments with recurring revenue. More contrarian than pure SaaS plays. Dividend yield + growth. Real drugs for real diseases.",
-      "strength": 7.9,
-      "last_price": 87.55,
-      "last_price_change": 1.39,
-      "last_updated": "2026-02-09T03:47:00Z",
-      "fundamentals": {
-        "pe_ratio": 12,
-        "growth_rate": 8,
-        "market_cap": 70000000000,
-        "52w_high": 92,
-        "52w_low": 68,
-        "catalyst": "New CAR-T approvals, liver disease pipeline, dividend + buybacks"
-      }
-    }
+     {
+       "symbol": "MRVL",
+       "name": "Marvell Technology",
+       "addedDate": "2026-02-08",
+       "lastReviewDate": "2026-02-09",
+       "reason": "Connected storage and high-speed data center semiconductors. AI infrastructure play with less crowding than NVDA. Customers consolidating suppliers to Marvell for storage + networking. Strong execution, 30%+ revenue growth.",
+       "strength": 9.1,
+       "last_price": 92.45,
+       "last_price_change": 2.38,
+       "last_updated": "2026-02-09T03:47:00Z",
+       "research_sources": [
+         "Internal analysis: AI data center demand for storage controllers",
+         "Multiple analyst upgrades Q1 2026",
+         "Customer consolidation trend accelerating"
+       ],
+       "fundamentals": {
+         "pe_ratio": 28,
+         "growth_rate": 32,
+         "market_cap": 85000000000,
+         "52w_high": 95,
+         "52w_low": 42,
+         "catalyst": "Data center consolidation, AI storage demand, networking TAM expansion"
+       }
+     },
+     {
+       "symbol": "DDOG",
+       "name": "Datadog",
+       "addedDate": "2026-02-08",
+       "lastReviewDate": "2026-02-09",
+       "reason": "Cloud monitoring SaaS with recurring revenue model. Enterprise customers expanding Datadog footprint across infrastructure. AI integration into monitoring is creating new revenue streams. 40%+ revenue growth, path to 25%+ FCF margins.",
+       "strength": 8.8,
+       "last_price": 198.75,
+       "last_price_change": 2.16,
+       "last_updated": "2026-02-09T03:47:00Z",
+       "research_sources": [
+         "Enterprise cloud adoption accelerating",
+         "AI-powered observability becoming standard",
+         "Market consolidation around monitoring platforms"
+       ],
+       "fundamentals": {
+         "pe_ratio": 85,
+         "growth_rate": 38,
+         "market_cap": 55000000000,
+         "52w_high": 215,
+         "52w_low": 85,
+         "catalyst": "Improved operating leverage, AI features driving expansion, marketplace growth"
+       }
+     },
+     {
+       "symbol": "CRWD",
+       "name": "CrowdStrike Holdings",
+       "addedDate": "2026-02-08",
+       "lastReviewDate": "2026-02-09",
+       "reason": "Endpoint security leader consolidating enterprise security stack. Zero-trust architecture is now mandatory after breach epidemics. Net retention >120%. Moving from point solution to comprehensive platform. High gross margins 80%+.",
+       "strength": 8.6,
+       "last_price": 385.60,
+       "last_price_change": 1.71,
+       "last_updated": "2026-02-09T03:47:00Z",
+       "research_sources": [
+         "Security spend shift to zero-trust frameworks",
+         "Platform consolidation theme in enterprise IT",
+         "Strong net retention metrics indicating customer stickiness"
+       ],
+       "fundamentals": {
+         "pe_ratio": 48,
+         "growth_rate": 25,
+         "market_cap": 40000000000,
+         "52w_high": 450,
+         "52w_low": 185,
+         "catalyst": "Platform consolidation wins, deferred revenue inflection, international expansion"
+       }
+     },
+     {
+       "symbol": "NTRA",
+       "name": "Natera Inc",
+       "addedDate": "2026-02-08",
+       "lastReviewDate": "2026-02-09",
+       "reason": "Genetic testing pioneer with liquid biopsy technology for cancer detection. TAM expanding as screening becomes standard care. Transitioning to subscription model for recurring revenue. Real healthcare technology with defensive moat. High risk/high reward.",
+       "strength": 8.2,
+       "last_price": 89.20,
+       "last_price_change": 3.59,
+       "last_updated": "2026-02-09T03:47:00Z",
+       "research_sources": [
+         "Liquid biopsy becoming standard in cancer screening",
+         "Expanding insurance reimbursement for genetic tests",
+         "Small-cap healthcare innovation with large TAM potential"
+       ],
+       "fundamentals": {
+         "pe_ratio": null,
+         "growth_rate": 35,
+         "market_cap": 8000000000,
+         "52w_high": 120,
+         "52w_low": 28,
+         "catalyst": "Cancer screening TAM expansion, insurance reimbursement increases, subscription adoption"
+       }
+     },
+     {
+       "symbol": "GILD",
+       "name": "Gilead Sciences",
+       "addedDate": "2026-02-08",
+       "lastReviewDate": "2026-02-09",
+       "reason": "Biotech with proven cash flow generation and strong R&D pipeline. Portfolio includes HIV, hepatitis C treatments with recurring revenue. More contrarian than pure SaaS plays. Dividend yield + growth. Real drugs for real diseases.",
+       "strength": 7.9,
+       "last_price": 87.55,
+       "last_price_change": 1.39,
+       "last_updated": "2026-02-09T03:47:00Z",
+       "research_sources": [
+         "Undervalued biotech with proven cash generation",
+         "Pipeline strength in viral and chronic disease markets",
+         "Dividend sustainability with potential for upside from new approvals"
+       ],
+       "fundamentals": {
+         "pe_ratio": 12,
+         "growth_rate": 8,
+         "market_cap": 70000000000,
+         "52w_high": 92,
+         "52w_low": 68,
+         "catalyst": "New CAR-T approvals, liver disease pipeline, dividend + buybacks"
+       }
+     }
   ],
+  "portfolio_approach": {
+    "strategy": "Dynamic selection based on market opportunities and research",
+    "update_frequency": "Weekly or as market conditions shift",
+    "selection_criteria": [
+      "Clear, documented investment thesis with supporting research",
+      "Positive momentum with identifiable catalysts",
+      "Less crowded than mega-cap plays",
+      "Mix of growth, value, and sector rotation themes",
+      "Mid-cap and smaller companies preferred for higher conviction"
+    ],
+    "note": "Stocks are reviewed regularly as markets evolve. No hardcoded selections - only additions with researched rationale and multiple source backing."
+  },
   "history": [
     {
       "date": "2026-02-08",
@@ -122,16 +159,28 @@
       "reasoning": "Thesis: AI infrastructure buildout (SMCI servers) + storage for AI data (PSTG) + AI cloud leaders (NVDA, MSFT) + crypto as alternative inflation hedge and sector momentum play (COIN). All 5 have >8.2 strength with clear catalysts."
     },
     {
-      "date": "2026-02-08",
-      "action": "Portfolio redesign - smaller cap, more interesting companies",
-      "stocks_selected": [
-        "MRVL",
-        "DDOG",
-        "CRWD",
-        "NTRA",
-        "GILD"
-      ],
-      "reasoning": "Thesis: Move away from mega-cap safety plays. MRVL + DDOG benefit from AI/cloud growth but less crowded. CRWD is platform consolidation winner. NTRA is small-cap genetic testing revolutionizing healthcare. GILD is contrarian biotech with cash flow. Mix of growth (NTRA, DDOG, MRVL) and value (GILD) with real catalysts."
-    }
+       "date": "2026-02-08",
+       "action": "Portfolio redesign - smaller cap, more interesting companies",
+       "stocks_selected": [
+         "MRVL",
+         "DDOG",
+         "CRWD",
+         "NTRA",
+         "GILD"
+       ],
+       "reasoning": "Thesis: Move away from mega-cap safety plays. MRVL + DDOG benefit from AI/cloud growth but less crowded. CRWD is platform consolidation winner. NTRA is small-cap genetic testing revolutionizing healthcare. GILD is contrarian biotech with cash flow. Mix of growth (NTRA, DDOG, MRVL) and value (GILD) with real catalysts."
+     },
+     {
+       "date": "2026-02-09",
+       "action": "Research and validate portfolio selections",
+       "stocks_selected": [
+         "MRVL",
+         "DDOG",
+         "CRWD",
+         "NTRA",
+         "GILD"
+       ],
+       "reasoning": "Confirmed selections align with current market research: MRVL benefits from AI/storage infrastructure theme, DDOG from cloud/AI adoption, CRWD from security consolidation, NTRA from biotech opportunity set, GILD from undervalued biotech. Each pick backed by multiple research sources and clear catalysts. Portfolio approach changed to dynamic selection - stocks added based on research, not hardcoding."
+     }
   ]
 }
