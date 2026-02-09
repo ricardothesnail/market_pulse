@@ -29,50 +29,50 @@ export default function MemeCard({
   const getSignalColor = (signal: string) => {
     switch (signal) {
       case 'STRONG_BUY':
-        return 'bg-accent-green/30 text-accent-green'
+        return 'bg-joy-green/30 text-joy-green border border-joy-green/50'
       case 'BUY':
-        return 'bg-accent-blue/30 text-accent-blue'
+        return 'bg-joy-cyan/30 text-joy-cyan border border-joy-cyan/50'
       case 'STRONG_SELL':
-        return 'bg-accent-red/30 text-accent-red'
+        return 'bg-joy-orange/30 text-joy-orange border border-joy-orange/50'
       case 'SELL':
-        return 'bg-accent-orange/30 text-accent-orange'
+        return 'bg-joy-pink/30 text-joy-pink border border-joy-pink/50'
       default:
-        return 'bg-bg-hover text-text-secondary'
+        return 'bg-white/10 text-text-secondary border border-white/20'
     }
   }
 
   const getRSIColor = (rsiValue: number) => {
-    if (rsiValue > 70) return 'text-accent-red'
-    if (rsiValue < 30) return 'text-accent-green'
-    return 'text-accent-blue'
+    if (rsiValue > 70) return 'text-joy-orange'
+    if (rsiValue < 30) return 'text-joy-green'
+    return 'text-joy-blue'
   }
 
   return (
-    <div className="bg-gradient-card border border-card rounded-xl p-6 transition-all duration-300 hover:border-hover hover:shadow-card-hover">
+    <div className="bg-gradient-dark border-2 border-white/10 hover:border-joy-cyan/50 rounded-xl p-6 transition-all duration-300 hover:shadow-glow-cyan group">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-start gap-3">
           {image && (
             <img
               src={image}
               alt={name}
-              className="w-12 h-12 rounded-full border border-card"
+              className="w-12 h-12 rounded-full border-2 border-joy-cyan/50"
               onError={(e) => (e.currentTarget.style.display = 'none')}
             />
           )}
           <div>
-            <h3 className="text-xl font-bold text-accent-cyan">{symbol}</h3>
+            <h3 className="text-xl font-black text-joy-cyan">{symbol}</h3>
             <p className="text-sm text-text-muted">{name}</p>
           </div>
         </div>
         <div className="text-right">
           <p className="text-2xl font-bold text-text-primary">${price.toFixed(8)}</p>
-          <div className={`flex items-center gap-1 justify-end ${isPositive ? 'text-accent-green' : 'text-accent-red'}`}>
+          <div className={`flex items-center gap-1 justify-end font-bold ${isPositive ? 'text-joy-green' : 'text-joy-orange'}`}>
             {isPositive ? (
               <TrendingUp size={16} />
             ) : (
               <TrendingDown size={16} />
             )}
-            <span className="font-semibold">{isPositive ? '+' : ''}{priceChange24h.toFixed(2)}%</span>
+            <span>{isPositive ? '+' : ''}{priceChange24h.toFixed(2)}%</span>
           </div>
         </div>
       </div>
@@ -80,21 +80,21 @@ export default function MemeCard({
       <div className="space-y-2 mb-4 text-sm">
         <div className="flex justify-between">
           <span className="text-text-muted">Market Cap:</span>
-          <span className="font-semibold text-text-primary">{marketCap}</span>
+          <span className="font-bold text-text-primary">{marketCap}</span>
         </div>
         <div className="flex justify-between items-center">
           <span className="text-text-muted">RSI (14):</span>
           <div className="flex items-center gap-2">
             <span className={`font-bold text-lg ${getRSIColor(rsi)}`}>{rsi.toFixed(1)}</span>
-            {rsi > 70 && <Zap size={16} className="text-accent-red" />}
-            {rsi < 30 && <Zap size={16} className="text-accent-green" />}
+            {rsi > 70 && <Zap size={16} className="text-joy-orange" />}
+            {rsi < 30 && <Zap size={16} className="text-joy-green" />}
           </div>
         </div>
       </div>
 
-      <div className="pt-3 border-t border-card">
+      <div className="pt-3 border-t border-white/10">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-semibold text-text-muted">SIGNAL</span>
+          <span className="text-xs font-bold text-text-muted uppercase">Signal</span>
           <span className={`px-3 py-1 rounded-full text-xs font-bold ${getSignalColor(sellSignal)}`}>
             {sellSignal}
           </span>

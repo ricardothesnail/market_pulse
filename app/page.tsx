@@ -38,6 +38,15 @@ interface NewsItem {
   sentiment: 'bullish' | 'bearish' | 'neutral'
 }
 
+// Color assignments for stocks
+const STOCK_COLORS: Record<string, { colorGradient: string; glowColor: string }> = {
+  MRVL: { colorGradient: 'gradient-joy-purple', glowColor: 'shadow-glow-purple' },
+  DDOG: { colorGradient: 'gradient-joy-blue', glowColor: 'shadow-glow-blue' },
+  CRWD: { colorGradient: 'gradient-joy-cyan', glowColor: 'shadow-glow-cyan' },
+  NTRA: { colorGradient: 'gradient-joy-green', glowColor: 'shadow-glow-green' },
+  GILD: { colorGradient: 'gradient-joy-orange', glowColor: 'shadow-glow-orange' },
+}
+
 export default function Home() {
   const [stocks, setStocks] = useState<Stock[]>([])
   const [memecoins, setMemecoins] = useState<Memecoin[]>([])
@@ -52,145 +61,70 @@ export default function Home() {
   const loadData = async () => {
     setLoading(true)
     try {
-      const mockStocks: Stock[] = [
-        {
-          symbol: 'MRVL',
-          name: 'Marvell Technology',
-          price: 92.45,
-          change: 2.15,
-          changePercent: 2.38,
-          reason: 'Connected storage and high-speed data center semiconductors. AI infrastructure with less crowding.',
-          strength: 9.1,
-          colorGradient: 'gradient-joy-purple',
-          glowColor: 'shadow-glow-purple',
-        },
-        {
-          symbol: 'DDOG',
-          name: 'Datadog',
-          price: 198.75,
-          change: 4.2,
-          changePercent: 2.16,
-          reason: 'Cloud monitoring SaaS with 40%+ growth. Enterprise expansion loop accelerating.',
-          strength: 8.8,
-          colorGradient: 'gradient-joy-blue',
-          glowColor: 'shadow-glow-blue',
-        },
-        {
-          symbol: 'CRWD',
-          name: 'CrowdStrike Holdings',
-          price: 385.60,
-          change: 6.5,
-          changePercent: 1.71,
-          reason: 'Endpoint security consolidating enterprise stack. Zero-trust is now mandatory.',
-          strength: 8.6,
-          colorGradient: 'gradient-joy-cyan',
-          glowColor: 'shadow-glow-cyan',
-        },
-        {
-          symbol: 'NTRA',
-          name: 'Natera Inc',
-          price: 89.20,
-          change: 3.1,
-          changePercent: 3.59,
-          reason: 'Genetic testing + liquid biopsy for cancer detection. TAM expanding rapidly.',
-          strength: 8.2,
-          colorGradient: 'gradient-joy-green',
-          glowColor: 'shadow-glow-green',
-        },
-        {
-          symbol: 'GILD',
-          name: 'Gilead Sciences',
-          price: 87.55,
-          change: 1.2,
-          changePercent: 1.39,
-          reason: 'Biotech with proven cash flow. New CAR-T pipeline + dividend + buybacks.',
-          strength: 7.9,
-          colorGradient: 'gradient-joy-orange',
-          glowColor: 'shadow-glow-orange',
-        },
-      ]
+      // Fetch stocks
+      const stocksRes = await fetch('/api/stocks')
+      const stocksData = await stocksRes.json()
+      
+      if (stocksData.stocks) {
+        const formattedStocks: Stock[] = stocksData.stocks.map((stock: any) => ({
+          symbol: stock.symbol,
+          name: stock.name,
+          price: stock.last_price || 0,
+          change: stock.last_price_change || 0,
+          changePercent: stock.last_price_change || 0,
+          reason: stock.reason,
+          strength: stock.strength,
+          ...(STOCK_COLORS[stock.symbol] || { colorGradient: 'gradient-joy-blue', glowColor: 'shadow-glow-blue' }),
+        }))
+        setStocks(formattedStocks)
+      }
 
-      const mockMemecoins: Memecoin[] = [
-        {
-          symbol: 'PEPE',
-          name: 'Pepe',
-          price: 0.000003752,
-          priceChange24h: -2.96,
-          marketCap: '$1.55B',
-          rsi: 45.2,
-          sellSignal: 'HOLD',
-        },
-        {
-          symbol: 'SHIB',
-          name: 'Shiba Inu',
-          price: 0.000006086,
-          priceChange24h: -3.09,
-          marketCap: '$3.59B',
-          rsi: 38.5,
-          sellSignal: 'BUY',
-        },
-        {
-          symbol: 'DOGE',
-          name: 'Dogecoin',
-          price: 0.09591,
-          priceChange24h: -2.26,
-          marketCap: '$16.18B',
-          rsi: 52.1,
-          sellSignal: 'HOLD',
-        },
-        {
-          symbol: 'FLOKI',
-          name: 'Floki Inu',
-          price: 0.000234,
-          priceChange24h: 5.32,
-          marketCap: '$245M',
-          rsi: 68.7,
-          sellSignal: 'SELL',
-        },
-        {
-          symbol: 'WIF',
-          name: 'dogwifhat',
-          price: 0.287,
-          priceChange24h: 12.45,
-          marketCap: '$867M',
-          rsi: 72.3,
-          sellSignal: 'STRONG_SELL',
-        },
-      ]
+      // Fetch memecoins
+      const memesRes = await fetch('/api/memecoins')
+      const memesData = await memesRes.json()
+      
+      if (memesData.memecoins && memesData.memecoins.length > 0) {
+        const formattedMemes: Memecoin[] = memesData.memecoins.map((coin: any) => ({
+          symbol: coin.symbol,
+          name: coin.name,
+          price: coin.current_price || 0,
+          priceChange24h: coin.price_change_24h || 0,
+          marketCap: coin.market_cap || 'N/A',
+          rsi: coin.rsi || 50,
+          sellSignal: coin.sellSignal || 'HOLD',
+          image: coin.image,
+        }))
+        setMemecoins(formattedMemes)
+      }
 
-      const mockNews: NewsItem[] = [
-        {
-          title: "Japan's Nikkei 225 crosses 57,000 for first time as Takaichi secures historic mandate",
-          source: 'CNBC',
-          url: 'https://www.cnbc.com/2026/02/09/japan-stocks-set-to-soar-after-takaichi-secures-historic-mandate.html',
-          insight: 'Takaichi win signals policy stability in Japan. Could strengthen yen and affect US-Japan dynamics.',
-          sentiment: 'bullish',
-        },
-        {
-          title: 'Stock futures tick higher as markets await closely watched jobs, inflation reports',
-          source: 'CNBC',
-          url: 'https://www.cnbc.com/2026/02/08/stock-market-today-live-updates.html',
-          insight: 'Market pricing in softer labor data. Watch employment figures—they drive Fed policy.',
-          sentiment: 'neutral',
-        },
-        {
-          title: 'Tech giants continue AI spending despite softening tech sector',
-          source: 'CNBC',
-          url: 'https://www.cnbc.com/2026/02/08/here-are-the-5-big-things-were-watching-in-the-stock-market-this-week.html',
-          insight: 'NVIDIA/MSFT capex is structural, not cyclical. Supports our tech allocation.',
-          sentiment: 'bullish',
-        },
-      ]
+      // Fetch news
+      const newsRes = await fetch('/api/news')
+      const newsData = await newsRes.json()
+      
+      if (newsData.news && newsData.news.length > 0) {
+        const formattedNews: NewsItem[] = newsData.news.map((item: any) => ({
+          title: item.title,
+          source: item.source,
+          url: item.url,
+          insight: item.description || item.insight || '',
+          sentiment: determineSentiment(item.title, item.description),
+        }))
+        setNews(formattedNews)
+      }
 
-      setStocks(mockStocks)
-      setMemecoins(mockMemecoins)
-      setNews(mockNews)
       setLastUpdated(new Date().toLocaleString())
     } catch (error) {
       console.error('Error loading data:', error)
     } finally {
       setLoading(false)
     }
+  }
+
+  const determineSentiment = (title: string, description?: string): 'bullish' | 'bearish' | 'neutral' => {
+    const text = `${title} ${description || ''}`.toLowerCase()
+    if (text.includes('surge') || text.includes('gain') || text.includes('jump') || text.includes('rise') || text.includes('rally')) return 'bullish'
+    if (text.includes('drop') || text.includes('fall') || text.includes('crash') || text.includes('decline') || text.includes('loss')) return 'bearish'
+    return 'neutral'
   }
 
   return (
@@ -242,11 +176,15 @@ export default function Home() {
                 <div key={i} className="h-48 bg-gradient-dark border-2 border-white/10 rounded-xl animate-pulse" />
               ))}
             </div>
-          ) : (
+          ) : memecoins.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {memecoins.map((coin) => (
                 <MemeCard key={coin.symbol} {...coin} />
               ))}
+            </div>
+          ) : (
+            <div className="p-6 bg-gradient-dark border-2 border-white/10 rounded-xl text-center">
+              <p className="text-text-secondary">No memecoin data available yet. Check back after the market update.</p>
             </div>
           )}
 
@@ -264,7 +202,7 @@ export default function Home() {
         {/* News Section */}
         <section className="mb-24">
           <h2 className="text-4xl font-black text-joy-green mb-4">📰 Market News & Insights</h2>
-          <p className="text-text-secondary mb-12">Latest market developments with my analysis and sentiment signals.</p>
+          <p className="text-text-secondary mb-12">Latest market developments with sentiment analysis.</p>
 
           {loading ? (
             <div className="space-y-4">
@@ -272,11 +210,15 @@ export default function Home() {
                 <div key={i} className="h-24 bg-gradient-dark border-2 border-white/10 rounded-xl animate-pulse" />
               ))}
             </div>
-          ) : (
+          ) : news.length > 0 ? (
             <div className="space-y-4">
               {news.map((item, idx) => (
                 <NewsCard key={idx} {...item} />
               ))}
+            </div>
+          ) : (
+            <div className="p-6 bg-gradient-dark border-2 border-white/10 rounded-xl text-center">
+              <p className="text-text-secondary">No news data available yet. Check back after the market update.</p>
             </div>
           )}
         </section>
@@ -285,7 +227,7 @@ export default function Home() {
         <footer className="py-12 border-t border-white/10 text-center">
           <div className="space-y-2 text-text-muted text-sm">
             <p>Last updated: {lastUpdated}</p>
-            <p>Data refreshes automatically weekdays at 9:00 AM ET</p>
+            <p>Data refreshes automatically daily at 9:30 AM ET (market open)</p>
             <p className="text-xs text-text-muted/50 pt-4">
               Disclaimer: For informational purposes only. Not financial advice. Do your own research.
             </p>
